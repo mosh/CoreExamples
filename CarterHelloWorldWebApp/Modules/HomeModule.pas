@@ -31,8 +31,13 @@ type
         end);
 
       self.Get('/Health', (req, res, routeData) -> begin
-        await res.WriteAsync('Health!');
+          await res.WriteAsync('Health!');
+        end);
+
+      self.Get('/Location', (req, res, routeData) -> begin
+        await res.WriteAsync('Im running inside a container !');
       end);
+
 
       self.Before := (ctx) -> begin
           Console.WriteLine('Before in module!');
