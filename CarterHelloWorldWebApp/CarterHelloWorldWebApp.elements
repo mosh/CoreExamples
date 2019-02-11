@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProductVersion>3.5</ProductVersion>
+    <RootNamespace>CarterHelloWorldWebApp</RootNamespace>
+    <ProjectGuid>{A839B23F-CBCE-42CF-AF4A-3C11799CE2D3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>CarterHelloWorldWebApp</AssemblyName>
+    <ApplicationIcon>Properties\App.ico</ApplicationIcon>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <TargetFramework>.NETCore2.2</TargetFramework>
+    <Mode>Echoes</Mode>
+    <NETCoreRuntime>Microsoft.AspNetCore.App</NETCoreRuntime>
+    <NETCoreSDKVersion>2.2.103</NETCoreSDKVersion>
+    <NETCoreRuntimeVersion>2.2.1</NETCoreRuntimeVersion>
+    <Publish>True</Publish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <Optimize>False</Optimize>
+    <OutputPath>.\Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <GeneratePDB>True</GeneratePDB>
+    <GenerateMDB>True</GenerateMDB>
+    <EnableAsserts>True</EnableAsserts>
+    <CpuType>anycpu</CpuType>
+    <RuntimeVersion>v25</RuntimeVersion>
+    <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>.\Bin\Release</OutputPath>
+    <CpuType>anycpu</CpuType>
+    <RuntimeVersion>v25</RuntimeVersion>
+    <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.pas" />
+    <Content Include="Properties\App.ico" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.pas" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+    </None>
+    <Compile Include="Properties\Settings.Designer.pas" />
+    <Compile Include="Startup.pas" />
+    <Compile Include="Modules\HomeModule.pas" />
+    <Compile Include="Program.pas" />
+    <Compile Include="Services\SomeService.pas" />
+    <Compile Include="Modules\SecureModule.pas" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Echoes.targets" />
+  <ItemGroup>
+    <NuGetReference Include="carter:[3.11.0]">
+      <Private>True</Private>
+    </NuGetReference>
+    <NuGetReference Include="Newtonsoft.Json:[12.0.1]">
+      <Private>True</Private>
+    </NuGetReference>
+    <NuGetReference Include="System.Diagnostics.Process:*" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProductVersion>3.5</ProductVersion>
+    <RootNamespace>ServerlessLambdaLibrary</RootNamespace>
+    <ProjectGuid>{EB5CDC91-85F2-4040-94D4-0DD5BB194FC9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>ServerlessLambdaLibrary</AssemblyName>
+    <ApplicationIcon>Properties\App.ico</ApplicationIcon>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <TargetFramework>.NETCore2.1</TargetFramework>
+    <Mode>Echoes</Mode>
+    <Publish>False</Publish>
+    <NETCoreRuntimeVersion>2.1.6</NETCoreRuntimeVersion>
+    <NETCoreSDKVersion>2.1.503</NETCoreSDKVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <Optimize>True</Optimize>
+    <OutputPath>.\Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <GeneratePDB>True</GeneratePDB>
+    <GenerateMDB>True</GenerateMDB>
+    <EnableAsserts>True</EnableAsserts>
+    <CpuType>anycpu</CpuType>
+    <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>.\Bin\Release</OutputPath>
+    <CpuType>anycpu</CpuType>
+    <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
+    <Publish>True</Publish>
+  </PropertyGroup>
+  <ItemGroup>
+    <NuGetReference Include="amazon.lambda.serialization.json:[1.4.0]">
+      <Private>True</Private>
+    </NuGetReference>
+    <NuGetReference Include="amazon.lambda.apigatewayevents:[1.1.3]">
+      <Private>True</Private>
+    </NuGetReference>
+    <NuGetReference Include="amazon.lambda.core:[1.0.0]">
+      <Private>True</Private>
+    </NuGetReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.pas" />
+    <Content Include="Properties\App.ico" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.pas" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+    </None>
+    <Compile Include="Properties\Settings.Designer.pas" />
+    <Compile Include="Functions.pas" />
+    <None Include="template.yaml" />
+    <Compile Include="LambdaFunctionsBase.pas" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Echoes.targets" />
+</Project>
