@@ -13,7 +13,7 @@
     <NETCoreRuntime>Microsoft.AspNetCore.App</NETCoreRuntime>
     <NETCoreSDKVersion>2.2.103</NETCoreSDKVersion>
     <NETCoreRuntimeVersion>2.2.1</NETCoreRuntimeVersion>
-    <Publish>True</Publish>
+    <Publish>False</Publish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <Optimize>False</Optimize>
@@ -31,6 +31,7 @@
     <CpuType>anycpu</CpuType>
     <RuntimeVersion>v25</RuntimeVersion>
     <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
+    <Publish>True</Publish>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.pas" />
