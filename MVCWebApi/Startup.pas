@@ -60,7 +60,6 @@ type
 
           app.UseMvc(routes ->
           begin
-              routes.
               routes.MapRoute('default','{controller=Home}/{action=Index}/{id?}');
           end);
       end;
