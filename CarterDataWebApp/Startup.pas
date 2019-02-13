@@ -20,9 +20,9 @@ type
 
   Startup = public class
   private
-    method GetOptions(/*addresses:ICollection<String>*/):CarterOptions;
+    method GetOptions:CarterOptions;
     begin
-      exit new CarterOptions(ctx -> self.GetBeforeHook(ctx), ctx -> self.GetAfterHook(ctx)/*, new OpenApiOptions(addresses)*/);
+      exit new CarterOptions(ctx -> self.GetBeforeHook(ctx), ctx -> self.GetAfterHook(ctx));
     end;
 
     method  GetBeforeHook(ctx:HttpContext):Task<Boolean>;
@@ -42,7 +42,7 @@ type
     method ConfigureServices(services:IServiceCollection);
     begin
 
-      var connectionsFilename := '/Users/JohnMoshakis 1/Documents/Secrets/Connections.Json';
+      var connectionsFilename := '/Users/JohnMoshakis/Documents/Secrets/Connections.Json';
       var connections := Connections.LoadConnections(connectionsFilename);
 
       services.AddSingleton<SailedRepository>(new SailedRepository(connections['PostgresAWS'].Connection)

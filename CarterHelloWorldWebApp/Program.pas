@@ -24,7 +24,7 @@ type
     begin
       exit WebHost
         .CreateDefaultBuilder(args)
-        .UseUrls('http://*:5060')
+        .UseUrls('http://*:80')
         .UseStartup<Startup>();
     end;
 
