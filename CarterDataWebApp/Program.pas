@@ -16,6 +16,7 @@ type
   public
     class method Main(args: array of String): Int32;
     begin
+
       Console.WriteLine('Process {0}',System.Diagnostics.Process.GetCurrentProcess.Id);
 
       CreateWebHostBuilder(args).Build.Run;

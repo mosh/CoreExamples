@@ -3,7 +3,8 @@
 uses
   Newtonsoft.Json,
   System.Collections.Generic,
-  System.IO;
+  System.IO,
+  System.Reflection;
 
 type
   Connections = public class
@@ -11,6 +12,10 @@ type
   public
     class method LoadConnections(filename:String):Dictionary<String,Connection>;
     begin
+
+      var rootFolder := Path.GetDirectoryName(value);
+
+      var fullFilename := Path.Combine(rootFolder,filename);
 
       var items := new Dictionary<String,Connection>;
 

@@ -42,8 +42,7 @@ type
     method ConfigureServices(services:IServiceCollection);
     begin
 
-      var connectionsFilename := '/Users/JohnMoshakis/Documents/Secrets/Connections.Json';
-      var connections := Connections.LoadConnections(connectionsFilename);
+      var connections := Connections.LoadConnections('Connections.Json');
 
       services.AddSingleton<SailedRepository>(new SailedRepository(connections['PostgresAWS'].Connection)
         withCert(connections['PostgresAWS'].Certificate));

@@ -53,6 +53,7 @@
     <Compile Include="Connections.pas" />
     <Compile Include="Models\Sailed.pas" />
     <Compile Include="Repositories\AWSPostgresRepository.pas" />
+    <None Include="Connections.Json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Echoes.targets" />
   <ItemGroup>
