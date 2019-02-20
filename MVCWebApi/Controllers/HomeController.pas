@@ -7,8 +7,7 @@ uses
   System.Linq,
   System.Threading.Tasks,
   Microsoft.AspNetCore.Mvc,
-  MVCWebApi.Models
-  ;
+  MVCWebApi.Models;
 
 
 type

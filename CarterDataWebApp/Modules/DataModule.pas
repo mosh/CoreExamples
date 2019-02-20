@@ -4,7 +4,7 @@ uses
   Carter,
   Carter.Request,
   Carter.Response,
-  CarterDataWebApp.Repositories;
+  DataAccessLibrary.Repositories;
 
 type
   DataModule = public class(CarterModule)

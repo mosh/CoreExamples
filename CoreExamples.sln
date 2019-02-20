@@ -5,9 +5,13 @@ Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "CarterDataWebApp", "CarterD
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "CarterHelloWorldWebApp", "CarterHelloWorldWebApp\CarterHelloWorldWebApp.elements", "{A839B23F-CBCE-42CF-AF4A-3C11799CE2D3}"
 EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "DataAccessLibrary", "DataAccessLibrary\DataAccessLibrary.elements", "{991D7838-5F7E-410E-A2F9-5D364A8B51A2}"
+EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "HelloWorldWebApp", "HelloWorldWebApp\HelloWorldWebApp.elements", "{A839B23F-CBCE-42CF-AF4A-3C11799CE2D3}"
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "MVCWebApi", "MVCWebApi\MVCWebApi.elements", "{266725D2-0D82-4B41-B619-9189B384D30C}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "Moshine.Data", "..\..\Moshine.Data\Moshine.Data.elements", "{41F803C5-E6AF-4069-9FC0-A36567D3688B}"
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "ServerlessLambdaLibrary", "ServerlessLambdaLibrary\ServerlessLambdaLibrary.elements", "{EB5CDC91-85F2-4040-94D4-0DD5BB194FC9}"
 EndProject
@@ -25,6 +29,10 @@ Global
 		{A839B23F-CBCE-42CF-AF4A-3C11799CE2D3}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{A839B23F-CBCE-42CF-AF4A-3C11799CE2D3}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
 		{A839B23F-CBCE-42CF-AF4A-3C11799CE2D3}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{991D7838-5F7E-410E-A2F9-5D364A8B51A2}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{991D7838-5F7E-410E-A2F9-5D364A8B51A2}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{991D7838-5F7E-410E-A2F9-5D364A8B51A2}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{991D7838-5F7E-410E-A2F9-5D364A8B51A2}.Release|AnyCPU.Build.0 = Release|AnyCPU
 		{A839B23F-CBCE-42CF-AF4A-3C11799CE2D3}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
 		{A839B23F-CBCE-42CF-AF4A-3C11799CE2D3}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{A839B23F-CBCE-42CF-AF4A-3C11799CE2D3}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
@@ -33,6 +41,10 @@ Global
 		{266725D2-0D82-4B41-B619-9189B384D30C}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{266725D2-0D82-4B41-B619-9189B384D30C}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
 		{266725D2-0D82-4B41-B619-9189B384D30C}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{41F803C5-E6AF-4069-9FC0-A36567D3688B}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{41F803C5-E6AF-4069-9FC0-A36567D3688B}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{41F803C5-E6AF-4069-9FC0-A36567D3688B}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{41F803C5-E6AF-4069-9FC0-A36567D3688B}.Release|AnyCPU.Build.0 = Release|AnyCPU
 		{EB5CDC91-85F2-4040-94D4-0DD5BB194FC9}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
 		{EB5CDC91-85F2-4040-94D4-0DD5BB194FC9}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{EB5CDC91-85F2-4040-94D4-0DD5BB194FC9}.Release|AnyCPU.ActiveCfg = Release|AnyCPU

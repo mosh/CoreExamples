@@ -1,4 +1,4 @@
-﻿namespace CarterDataWebApp.Models;
+﻿namespace DataAccessLibrary.Models;
 
 type
   Sailed = public class

@@ -11,8 +11,8 @@
     <TargetFramework>.NETCore2.2</TargetFramework>
     <Mode>Echoes</Mode>
     <NETCoreRuntime>Microsoft.AspNetCore.App</NETCoreRuntime>
-    <NETCoreSDKVersion>2.2.101</NETCoreSDKVersion>
-    <NETCoreRuntimeVersion>2.2.0</NETCoreRuntimeVersion>
+    <NETCoreSDKVersion>2.2.103</NETCoreSDKVersion>
+    <NETCoreRuntimeVersion>2.2.1</NETCoreRuntimeVersion>
     <Publish>True</Publish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -48,11 +48,6 @@
     <Compile Include="Program.pas" />
     <Compile Include="Services\SomeService.pas" />
     <Compile Include="Modules\DataModule.pas" />
-    <Compile Include="Repositories\SailedRepository.pas" />
-    <Compile Include="Connection.pas" />
-    <Compile Include="Connections.pas" />
-    <Compile Include="Models\Sailed.pas" />
-    <Compile Include="Repositories\AWSPostgresRepository.pas" />
     <None Include="Connections.Json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Echoes.targets" />
@@ -63,13 +58,25 @@
     <NuGetReference Include="Newtonsoft.Json:[12.0.1]">
       <Private>True</Private>
     </NuGetReference>
-    <NuGetReference Include="Dapper:[1.50.5]">
+    <NuGetReference Include="Dapper:[1.50.7]">
       <Private>True</Private>
     </NuGetReference>
-    <NuGetReference Include="npgsql:[4.0.3]">
+    <NuGetReference Include="npgsql:[4.0.4]">
       <Private>True</Private>
     </NuGetReference>
     <NuGetReference Include="System.Data.Common:*" />
     <NuGetReference Include="System.Diagnostics.Process:*" />
+    <ProjectReference Include="DataAccessLibrary">
+      <HintPath>..\DataAccessLibrary\Bin\Debug\DataAccessLibrary.dll</HintPath>
+      <Project>{991D7838-5F7E-410E-A2F9-5D364A8B51A2}</Project>
+      <ProjectFile>..\DataAccessLibrary\DataAccessLibrary.elements</ProjectFile>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="Moshine.Data">
+      <HintPath>\Users\JohnMoshakis\Documents\develop\Echoes\Moshine.Data\Bin\Debug\Moshine.Data.dll</HintPath>
+      <Project>{41F803C5-E6AF-4069-9FC0-A36567D3688B}</Project>
+      <ProjectFile>\Users\JohnMoshakis\Documents\develop\Echoes\Moshine.Data\Moshine.Data.elements</ProjectFile>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
 </Project>

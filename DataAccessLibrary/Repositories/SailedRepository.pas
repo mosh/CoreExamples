@@ -1,15 +1,16 @@
-﻿namespace CarterDataWebApp.Repositories;
+﻿namespace DataAccessLibrary.Repositories;
 
 uses
-  CarterDataWebApp.Models,
+  DataAccessLibrary.Models,
   Dapper,
+  Moshine.Data.Repositories,
   System.Collections.Generic,
   System.Linq,
   System.Threading.Tasks;
 
 type
 
-  SailedRepository = public class(AWSPostgresRepository)
+  SailedRepository = public class(PostgresRepository)
   private
   protected
   public
