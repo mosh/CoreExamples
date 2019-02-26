@@ -78,5 +78,9 @@
       <ProjectFile>\Users\JohnMoshakis\Documents\develop\Echoes\Moshine.Data\Moshine.Data.elements</ProjectFile>
       <Private>True</Private>
     </ProjectReference>
+    <Reference Include="Dapper">
+      <HintPath>\Users\JohnMoshakis\Documents\develop\Dapper\Dapper\bin\Debug\netstandard2.0\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
 </Project>

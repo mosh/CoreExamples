@@ -21,7 +21,7 @@ type
 
       self.Get('/Sailed', (request, response, routeData) -> begin
         var results := await _repository.GetAll;
-        response.AsJson(results);
+        exit response.AsJson(results);
       end);
 
       self.Get('/Sailed/{id:int}', (request, response, routeData) -> begin
@@ -29,7 +29,7 @@ type
         var id := routeData.As<Integer>("id");
 
         var results := await _repository.Get(id);
-        response.AsJson(results);
+        exit response.AsJson(results);
       end);
 
     end;

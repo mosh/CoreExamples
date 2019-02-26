@@ -46,8 +46,8 @@ type
 
       var connections := Connections.LoadConnections('Connections.Json');
 
-      services.AddSingleton<SailedRepository>(new SailedRepository(connections['PostgresLocal'].Connection)
-        withCert(connections['PostgresLocal'].Certificate));
+      services.AddSingleton<SailedRepository>(new SailedRepository(connections['PostgresAWS'].Connection)
+        withCert(connections['PostgresAWS'].Certificate));
 
       services.AddSingleton<SomeService>;
 

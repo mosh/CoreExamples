@@ -12,10 +12,17 @@ uses
   Microsoft.AspNetCore.Hosting,
   Microsoft.AspNetCore.Http,
   Microsoft.Extensions.DependencyInjection,
-  Microsoft.Extensions.DependencyModel;
+  Microsoft.Extensions.DependencyModel, System.Security.Claims;
 
 
 type
+
+  MyIdentity = public class(ClaimsIdentity)
+  public
+    property IsAuthenticated: Boolean read begin
+      exit true;
+    end; override;
+  end;
 
   Startup = public class
   private
@@ -27,6 +34,22 @@ type
     method  GetBeforeHook(ctx:HttpContext):Task<Boolean>;
     begin
       ctx.Request.Headers['HOWDY'] := 'FOLKS';
+
+      if(ctx.Request.Headers.ContainsKey('token'))then
+      begin
+        var value := ctx.Request.Headers['token'];
+        Console.WriteLine($'Token value is {value}');
+
+        var identity := new MyIdentity();
+        identity.AddClaim(new Claim(ClaimTypes.Name,'Mr Smith'));
+
+        ctx.User := new ClaimsPrincipal;
+        ctx.User.AddIdentity(identity);
+
+
+      end;
+
+
       exit Task.FromResult(true);
     end;
 
@@ -45,6 +68,8 @@ type
       var entryAssembly := System.Reflection.Assembly.GetEntryAssembly;
       var assemblyCatalog := new DependencyContextAssemblyCatalog(entryAssembly);
       services.AddCarter(assemblyCatalog);
+
+
     end;
 
     method Configure(app:IApplicationBuilder);
