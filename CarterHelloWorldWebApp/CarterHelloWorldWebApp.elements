@@ -49,10 +49,12 @@
     <Compile Include="Program.pas" />
     <Compile Include="Services\SomeService.pas" />
     <Compile Include="Modules\SecureModule.pas" />
+    <Compile Include="Models\MyIdentity.pas" />
+    <Compile Include="Models\Employee.pas" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Echoes.targets" />
   <ItemGroup>
-    <NuGetReference Include="carter:[3.11.0]">
+    <NuGetReference Include="carter:[4.1.0]">
       <Private>True</Private>
     </NuGetReference>
     <NuGetReference Include="Newtonsoft.Json:[12.0.1]">

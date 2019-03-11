@@ -5,6 +5,7 @@ uses
   Carter.ModelBinding,
   Carter.Request,
   Carter.Response,
+  CarterHelloWorldWebApp.Models,
   System.Threading.Tasks;
 
 type
@@ -16,6 +17,10 @@ type
     begin
 
       self.RequiresAuthentication;
+
+      self.Get('/Who', (req, res, routeDate) -> begin
+          await res.WriteAsync('You are !');
+        end);
 
       self.Post('/Employee',(req, res, routeDate) -> begin
 

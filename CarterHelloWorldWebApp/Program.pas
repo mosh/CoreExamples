@@ -1,4 +1,4 @@
-﻿namespace HelloWorldWebApp;
+﻿namespace CarterHelloWorldWebApp;
 
 uses
   Carter,

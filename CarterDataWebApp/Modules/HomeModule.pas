@@ -6,7 +6,7 @@ uses
   System.Threading.Tasks;
 
 type
-  HelloModule = public class(CarterModule)
+  HomeModule = public class(CarterModule)
 
   private
     _someService:SomeService;

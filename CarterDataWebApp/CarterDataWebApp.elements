@@ -52,7 +52,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Echoes.targets" />
   <ItemGroup>
-    <NuGetReference Include="Carter:[3.10.0]">
+    <NuGetReference Include="carter:[4.1.0]">
       <Private>True</Private>
     </NuGetReference>
     <NuGetReference Include="Newtonsoft.Json:[12.0.1]">

@@ -5,16 +5,11 @@ uses
   Carter.ModelBinding,
   Carter.Request,
   Carter.Response,
-  HelloWorldWebApp.Services, System.Threading.Tasks;
+  CarterHelloWorldWebApp.Services, System.Threading.Tasks;
 
 type
-  Employee = public class
-  public
-    property Id:Integer;
-    property Name:String;
-  end;
 
-  HelloModule = public class(CarterModule)
+  HomeModule = public class(CarterModule)
 
   private
     _someService:SomeService;

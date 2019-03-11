@@ -1,8 +1,10 @@
-﻿namespace HelloWorldWebApp;
+﻿namespace CarterHelloWorldWebApp;
 
 uses
   Carter,
-  HelloWorldWebApp.Services,
+  CarterHelloWorldWebApp.Models,
+  CarterHelloWorldWebApp.Modules,
+  CarterHelloWorldWebApp.Services,
   System,
   System.Collections.Generic,
   System.Linq,
@@ -17,16 +19,11 @@ uses
 
 type
 
-  MyIdentity = public class(ClaimsIdentity)
-  public
-    property IsAuthenticated: Boolean read begin
-      exit true;
-    end; override;
-  end;
+
 
   Startup = public class
   private
-    method GetOptions(/*addresses:ICollection<String>*/):CarterOptions;
+    method GetOptions:CarterOptions;
     begin
       exit new CarterOptions(ctx -> self.GetBeforeHook(ctx), ctx -> self.GetAfterHook(ctx)/*, new OpenApiOptions(addresses)*/);
     end;
@@ -46,7 +43,6 @@ type
         ctx.User := new ClaimsPrincipal;
         ctx.User.AddIdentity(identity);
 
-
       end;
 
 
@@ -65,10 +61,10 @@ type
 
       services.AddSingleton<SomeService>;
 
-      var entryAssembly := System.Reflection.Assembly.GetEntryAssembly;
-      var assemblyCatalog := new DependencyContextAssemblyCatalog(entryAssembly);
-      services.AddCarter(assemblyCatalog);
-
+      services.AddCarter(nil, c -> method begin
+          c.WithModule<SecureModule>;
+          c.WithModule<HomeModule>;
+        end);
 
     end;
 

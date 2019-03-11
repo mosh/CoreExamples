@@ -2,6 +2,7 @@
 
 uses
   Carter,
+  CarterDataWebApp.Modules,
   CarterDataWebApp.Services,
   DataAccessLibrary,
   DataAccessLibrary.Repositories,
@@ -51,9 +52,10 @@ type
 
       services.AddSingleton<SomeService>;
 
-      var entryAssembly := System.Reflection.Assembly.GetEntryAssembly;
-      var assemblyCatalog := new DependencyContextAssemblyCatalog(entryAssembly);
-      services.AddCarter(assemblyCatalog);
+      services.AddCarter(nil, c -> method begin
+          c.WithModule<DataModule>;
+          c.WithModule<HomeModule>;
+        end);
     end;
 
     method Configure(app:IApplicationBuilder);
